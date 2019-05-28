@@ -7,7 +7,7 @@ SWAGGER_UI_DOC_EXPANSION = 'none'
 
 # API metadata
 API_TITLE = 'MAX Chinese Phonetic Similarity Estimator'
-API_DESC = 'Calculate phonetic similarity and get close candidate words to a given Chinese word.'
+API_DESC = 'Estimate the phonetic distance between Chinese words and get similar sounding candidate words.'
 API_VERSION = '1.1.0'
 
 # default model
