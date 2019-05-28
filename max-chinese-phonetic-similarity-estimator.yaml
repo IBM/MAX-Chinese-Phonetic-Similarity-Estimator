@@ -1,0 +1,32 @@
+apiVersion: v1.1.0
+kind: Service
+metadata:
+  name: max-chinese-phonetic-similarity-estimator
+spec:
+  selector:
+    app: max-chinese-phonetic-similarity-estimator
+  ports:
+  - port: 5000
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: max-chinese-phonetic-similarity-estimator
+  labels:
+    app: max-chinese-phonetic-similarity-estimator
+spec:
+  selector:
+    matchLabels:
+      app: max-chinese-phonetic-similarity-estimator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: max-chinese-phonetic-similarity-estimator
+    spec:
+      containers:
+      - name: max-chinese-phonetic-similarity-estimator
+        image: codait/max-chinese-phonetic-similarity-estimator:latest
+        ports:
+        - containerPort: 5000
