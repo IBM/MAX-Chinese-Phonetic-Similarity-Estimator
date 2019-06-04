@@ -6,7 +6,7 @@ services:
 install:
   - docker build -t max-dimsim .
   - docker run -it -d -p 5000:5000 max-dimsim
-  - pip install pytest requests
+  - pip install pytest requests flake8
 before_script:
   - flake8 . --max-line-length=127
   - sleep 30
