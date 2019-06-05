@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/IBM/MAX-Chinese-Phonetic-Similarity-Estimator.svg?branch=master)](https://travis-ci.com/IBM/MAX-Chinese-Phonetic-Similarity-Estimator) [![Website Status](https://img.shields.io/website/http/max-chinese-phonetic-similarity-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-chinese-phonetic-similarity-estimator.max.us-south.containers.appdomain.cloud/)
+
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
+
 # IBM Developer Model Asset Exchange: Chinese Phonetic Similarity Estimator
 
 This repository contains code to instantiate and deploy a Chinese Phonetic Similarity Estimator. The model provides a phonetic algorithm for indexing Chinese characters by sound. Given two Chinese words of the same length, the model determines the distances between the two words and also returns a few candidate words which are close to the given word(s). The code complies with the phonetic principles of Mandarin Chinese as guided by the Romanization defined in [ISO 7098:2015](https://www.iso.org/standard/61420.html).
