@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.com/IBM/MAX-Chinese-Phonetic-Similarity-Estimator.svg?branch=master)](https://travis-ci.com/IBM/MAX-Chinese-Phonetic-Similarity-Estimator) [![Website Status](https://img.shields.io/website/http/max-chinese-phonetic-similarity-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-chinese-phonetic-similarity-estimator.max.us-south.containers.appdomain.cloud/)
 
-[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
 
 # IBM Developer Model Asset Exchange: Chinese Phonetic Similarity Estimator
 
