@@ -33,10 +33,10 @@ def test_metadata():
 def test_response():
     model_endpoint = 'http://localhost:5000/model/predict'
     params = {
-        "first_word"    : u"大侠", 
-        "second_word"   : "",
-        "mode"          : 'simplified', 
-        "theta"         : 1
+        "first_word": u"大侠",
+        "second_word": "",
+        "mode": 'simplified',
+        "theta": 1
     }
     r = requests.post(url=model_endpoint, params=params)
 
@@ -45,13 +45,14 @@ def test_response():
     assert response['status'] == 'ok'
     assert response['predictions'][0]['distance'] == str(0)
 
+
 def test_response_close():
     model_endpoint = 'http://localhost:5000/model/predict'
     params = {
-        "first_word"    : u"大侠", 
-        "second_word"   : u"大虾",
-        "mode"          : 'simplified', 
-        "theta"         : 1
+        "first_word": u"大侠",
+        "second_word": u"大虾",
+        "mode": 'simplified',
+        "theta": 1
     }
     r = requests.post(url=model_endpoint, params=params)
 
@@ -60,13 +61,14 @@ def test_response_close():
     assert response['status'] == 'ok'
     assert response['predictions'][0]['distance'] == str(0.0002380952380952381)
 
+
 def test_response_far():
     model_endpoint = 'http://localhost:5000/model/predict'
     params = {
-        "first_word"    : u"大侠", 
-        "second_word"   : u"大人",
-        "mode"          : 'simplified', 
-        "theta"         : 1
+        "first_word": u"大侠",
+        "second_word": u"大人",
+        "mode": 'simplified',
+        "theta": 1
     }
     r = requests.post(url=model_endpoint, params=params)
 
@@ -75,13 +77,14 @@ def test_response_far():
     assert response['status'] == 'ok'
     assert response['predictions'][0]['distance'] == str(25.001417183349876)
 
+
 def test_response_candidates():
     model_endpoint = 'http://localhost:5000/model/predict'
     params = {
-        "first_word"    : u"大侠", 
-        "second_word"   : "",
-        "mode"          : 'simplified', 
-        "theta"         : 1
+        "first_word": u"大侠",
+        "second_word": "",
+        "mode": 'simplified',
+        "theta": 1
     }
     r = requests.post(url=model_endpoint, params=params)
 
@@ -91,13 +94,14 @@ def test_response_candidates():
     assert response['predictions'][0]['distance'] == str(0)
     assert response['predictions'][0]['candidates'][0] is not None
 
+
 def test_invalid_input():
     model_endpoint = 'http://localhost:5000/model/predict'
     params = {
-        "first_word"    : "abcde", 
-        "second_word"   : "",
-        "mode"          : 'simplified', 
-        "theta"         : 1
+        "first_word": "abcde",
+        "second_word": "",
+        "mode": 'simplified',
+        "theta": 1
     }
     r = requests.post(url=model_endpoint, params=params)
 
