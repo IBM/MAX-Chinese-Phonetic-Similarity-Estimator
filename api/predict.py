@@ -12,8 +12,8 @@ input_parser.add_argument('second_word', type=str,
 input_parser.add_argument('mode', type=str, default='simplified', choices=['simplified', 'traditional'],
                           help="Chinese: simplified or traditional.")
 input_parser.add_argument('theta', type=int, default=1,
-                          help="Distance threshold for number of candidate words to return. A higher theta returns more"
-                               "candidate words")
+                          help="Distance threshold for number of candidate words to return. A higher theta returns more "
+                               "candidate words. ")
 
 
 # Creating a JSON response model: https://flask-restplus.readthedocs.io/en/stable/marshalling.html#the-api-model-factory
@@ -54,7 +54,7 @@ class ModelPredictAPI(PredictAPI):
         try:
             preds = self.model_wrapper.predict(input_json)
         except:  # noqa
-            abort(400, "Invalid input to Pinyin converter, please check!")
+            abort(400, "The input word(s) is/are not valid utf-8 encoded Chinese word(s)")
 
         result['predictions'] = preds
         result['status'] = 'ok'
