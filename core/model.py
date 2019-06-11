@@ -38,6 +38,12 @@ class ModelWrapper(MAXModelWrapper):
         else:
             output_json['distance'] = 0
 
-        output_json['candidates'] = [dimsim.get_candidates(i, mode, theta) for i in input_strings]
+        output_json['candidates'] = {}        
+        output_json['candidates']['first_word'] = dimsim.get_candidates(input_strings[0], mode, theta)
+
+        if len(input_strings) == 2:
+            output_json['candidates']['second_word'] = dimsim.get_distance(input_strings[0], input_strings[1])
+        else:
+            output_json['candidates']['second_word'] = [""]
 
         return output_json
