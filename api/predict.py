@@ -56,7 +56,8 @@ class ModelPredictAPI(PredictAPI):
         try:
             preds = self.model_wrapper.predict(input_json)
         except TypeError or UnicodeDecodeError:  # noqa
-            abort(400, errors='first_word, second_word', message='The input format is not valid. Please input utf-8 encoded Chinese word(s) only')
+            abort(400, errors='first_word, second_word', message='The input format is not valid.'
+                  'Please input utf-8 encoded Chinese word(s) only')
 
         result['predictions'] = preds
         result['status'] = 'ok'
