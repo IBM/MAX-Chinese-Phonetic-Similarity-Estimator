@@ -1,8 +1,7 @@
 from core.model import ModelWrapper
 from maxfw.core import MAX_API, PredictAPI
 from flask_restplus import fields
-from flask import abort
-import copy
+from flask_restplus import abort
 
 # Set up parser for input data (http://flask-restplus.readthedocs.io/en/stable/parsing.html)
 input_parser = MAX_API.parser()
@@ -19,14 +18,14 @@ input_parser.add_argument('theta', type=int, default=1,
 
 # Creating a JSON response model: https://flask-restplus.readthedocs.io/en/stable/marshalling.html#the-api-model-factory
 
-candidates_response = {
-                    'first_word': fields.List(fields.String, description='Nearest candidates to first_word'), 
+candidates_response = MAX_API.model('CandidatesResponse', {
+                    'first_word': fields.List(fields.String, description='Nearest candidates to first_word'),
                     'second_word': fields.List(fields.String, description='Nearest candidates to second_word')
-                }
+                })
 
 label_prediction = MAX_API.model('Prediction', {
     'distance': fields.Float(required=True, description='Label identifier'),
-    'candidates': fields.Nested(candidates_response)
+    'candidates': fields.Nested(candidates_response, required=True, description='candidates')
 })
 
 predict_response = MAX_API.model('ModelPredictResponse', {
@@ -48,9 +47,6 @@ class ModelPredictAPI(PredictAPI):
         args = input_parser.parse_args()
 
         text = [args['first_word']]
-        if args['first_word'] == "":
-            abort(400, "Please provide a valid input string.")
-
         if args['second_word']:
             text.append(args['second_word'])
         theta = args['theta']
@@ -59,13 +55,10 @@ class ModelPredictAPI(PredictAPI):
 
         try:
             preds = self.model_wrapper.predict(input_json)
-        except:  # noqa
-            abort(400, "The input word(s) is/are not valid utf-8 encoded Chinese word(s)")
+        except TypeError or UnicodeDecodeError:  # noqa
+            abort(400, errors='first_word, second_word', message='The input format is not valid. Please input utf-8 encoded Chinese word(s) only')
 
         result['predictions'] = preds
-        
-        #print(preds)
         result['status'] = 'ok'
-        print(result)
 
         return result
