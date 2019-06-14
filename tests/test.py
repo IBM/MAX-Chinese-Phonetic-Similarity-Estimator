@@ -3,6 +3,7 @@ import pytest
 import requests
 from pytest import approx
 
+
 def test_swagger():
 
     model_endpoint = 'http://localhost:5000/swagger.json'
