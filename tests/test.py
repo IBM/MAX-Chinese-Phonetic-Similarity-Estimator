@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 import requests
-
+from pytest import approx
 
 def test_swagger():
 
@@ -59,7 +59,7 @@ def test_response_close():
     assert r.status_code == 200
     response = r.json()
     assert response['status'] == 'ok'
-    assert response['predictions'][0]['distance'] == 0.0002380952380952381
+    assert response['predictions'][0]['distance'] == approx(0.00024, abs=1e-3)
 
 
 def test_response_far():
@@ -75,7 +75,7 @@ def test_response_far():
     assert r.status_code == 200
     response = r.json()
     assert response['status'] == 'ok'
-    assert response['predictions'][0]['distance'] == 25.001417183349876
+    assert response['predictions'][0]['distance'] == approx(25, abs=1e-2)
 
 
 def test_response_candidates():

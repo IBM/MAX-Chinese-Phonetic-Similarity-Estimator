@@ -80,8 +80,8 @@ dist = dimsim.get_distance(['da4','xia2'],['da4','ren2']], pinyin=True)
 ```
 ***
 - Return top-k phonetically similar phrases of a given Chinese phrase with two optional parameters:
-    - **mode** controls the character type of the returned Chinese phrases, where 'simplified' represents simplified Chinese and 'traditional' represents traditional Chinese.
-    - **theta** controls the size of search space for the candidate phrases.
+    - **mode** controls the character type of the returned Chinese phrases, where 'simplified' represents simplified Chinese and 'traditional' represents traditional Chinese. Default value is 'simplified'.
+    - **theta** controls the size of search space for the candidate phrases. Default value is 1.
 ```python
 import dimsim
 

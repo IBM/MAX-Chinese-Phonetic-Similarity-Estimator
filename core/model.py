@@ -44,6 +44,6 @@ class ModelWrapper(MAXModelWrapper):
         if len(input_strings) == 2:
             output_json['candidates']['second_word'] = dimsim.get_candidates(input_strings[0], mode, theta)
         else:
-            output_json['candidates']['second_word'] = [""]
+            output_json['candidates']['second_word'] = []
 
         return output_json
