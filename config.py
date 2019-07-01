@@ -28,7 +28,7 @@ API_VERSION = '1.2.0'
 # default model
 MODEL_NAME = 'dimsim'
 DEFAULT_MODEL_PATH = 'assets/{}'.format(MODEL_NAME)
-MODEL_LICENSE = 'ApacheV2'
+MODEL_LICENSE = 'Apache V2'
 
 MODEL_META_DATA = {
     'id': '{}'.format(MODEL_NAME.lower()),
