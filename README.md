@@ -50,16 +50,12 @@ There are two ways to install this library:
 - Install from PyPi
 
 ```shell
-pip install dimsim
+$ pip install dimsim
 ```
-- Download the source code by cloning the source repo and compile it yourself.
+- Install from GitHub
 
 ```shell
-git clone git@github.com:System-T/DimSim.git
-
-cd DimSim/
-
-pip install -e .
+$ pip install git+https://github.com/System-T/Dimsim.git
 ```
 
 ### How to use the library
@@ -84,9 +80,9 @@ dist = dimsim.get_distance(['da4','xia2'],['da4','ren2']], pinyin=True)
 
 ```
 ***
-- Return top-k phonetically similar phrases of a given Chinese phrase. Two parameters:
-- **mode** controls the character type of the returned Chinese phrases, where 'simplified' represents simplified Chinese and 'traditional' represents traditional Chinese.
-- **theta** controls the size of search space for the candidate phrases.
+- Return top-k phonetically similar phrases of a given Chinese phrase with two optional parameters:
+    - **mode** controls the character type of the returned Chinese phrases, where 'simplified' represents simplified Chinese and 'traditional' represents traditional Chinese. Default value is 'simplified'.
+    - **theta** controls the size of search space for the candidate phrases. Default value is 1.
 ```python
 import dimsim
 
