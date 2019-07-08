@@ -28,7 +28,7 @@ def test_metadata():
     assert metadata['id'] == 'dimsim'
     assert metadata['name'] == 'dimsim Python Model'
     assert metadata['description'] == 'dimsim - A Chinese soundex library '
-    assert metadata['license'] == 'ApacheV2'
+    assert metadata['license'] == 'Apache V2'
 
 
 def test_response():
