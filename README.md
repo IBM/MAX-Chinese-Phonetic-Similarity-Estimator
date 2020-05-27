@@ -45,7 +45,7 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 ## Run using PyPi
 ### Installing the library
 **Dependencies**:
-- [pypinyin](https://github.com/mozillazg/python-pinyin): used for translating Chinese characters into their correponding pinyins. 
+- [pypinyin](https://github.com/mozillazg/python-pinyin): used for translating Chinese characters into their corresponding pinyins. 
 
 There are two ways to install this library:
 - Install from PyPi
