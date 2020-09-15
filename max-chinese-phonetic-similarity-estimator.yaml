@@ -26,7 +26,7 @@ spec:
         app: max-chinese-phonetic-similarity-estimator
     spec:
       containers:
-      - name: max-chinese-phonetic-similarity-estimator
+      - name: quay.io/max-chinese-phonetic-similarity-estimator
         image: codait/max-chinese-phonetic-similarity-estimator:latest
         ports:
         - containerPort: 5000

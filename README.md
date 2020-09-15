@@ -100,7 +100,7 @@ candidates = dimsim.get_candidates("粉丝", mode="traditional", theta=1)
 To run the docker image, which automatically starts the model serving API, run:
 
 ```
-$ docker run -it -p 5000:5000 codait/max-chinese-phonetic-similarity-estimator
+$ docker run -it -p 5000:5000 quay.io/codait/max-chinese-phonetic-similarity-estimator
 ```
 
 This will pull a pre-built image from Docker Hub (or use an existing image if already cached locally) and run it.
@@ -108,7 +108,7 @@ If you'd rather checkout and build the model locally you can follow the [run loc
 
 ## Deploy on Red Hat OpenShift
 
-You can deploy the model-serving microservice on Red Hat OpenShift by following the instructions for the OpenShift web console or the OpenShift Container Platform CLI [in this tutorial](https://developer.ibm.com/tutorials/deploy-a-model-asset-exchange-microservice-on-red-hat-openshift/), specifying `codait/max-chinese-phonetic-similarity-estimator` as the image name.
+You can deploy the model-serving microservice on Red Hat OpenShift by following the instructions for the OpenShift web console or the OpenShift Container Platform CLI [in this tutorial](https://developer.ibm.com/tutorials/deploy-a-model-asset-exchange-microservice-on-red-hat-openshift/), specifying `quay.io/codait/max-chinese-phonetic-similarity-estimator` as the image name.
 
 ## Deploy on Kubernetes
 
@@ -122,7 +122,7 @@ $ kubectl apply -f https://github.com/IBM/MAX-Chinese-Phonetic-Similarity-Estima
 
 The model will be available internally at port `5000`, but can also be accessed externally through the `NodePort`.
 
-A more elaborate tutorial on how to deploy this MAX model to production on [IBM Cloud](https://ibm.biz/Bdz2XM) can be found [here](http://ibm.biz/max-to-ibm-cloud-tutorial). 
+A more elaborate tutorial on how to deploy this MAX model to production on [IBM Cloud](https://ibm.biz/Bdz2XM) can be found [here](http://ibm.biz/max-to-ibm-cloud-tutorial).
 
 ## Run Locally
 
@@ -147,7 +147,7 @@ Change directory into the repository base folder:
 $ cd MAX-Chinese-Phonetic-Similarity-Estimator
 ```
 
-To build the docker image locally, run: 
+To build the docker image locally, run:
 
 ```
 $ docker build -t max-chinese-phonetic-similarity-estimator .
@@ -220,5 +220,5 @@ To run the Flask API app in debug mode, edit `config.py` to set `DEBUG = True` u
 To stop the Docker container, type `CTRL` + `C` in your terminal.
 
 ## Resources and Contributions
-   
+
 If you are interested in contributing to the Model Asset Exchange project or have any queries, please follow the instructions [here](https://github.com/CODAIT/max-central-repo).
