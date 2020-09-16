@@ -37,7 +37,7 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 # Deployment options
 
 * [Run using PyPi](#run-using-pypi)
-* [Deploy from Docker Hub](#deploy-from-docker-hub)
+* [Deploy from Quay](#deploy-from-quay)
 * [Deploy on Red Hat OpenShift](#deploy-on-red-hat-openshift)
 * [Deploy on Kubernetes](#deploy-on-kubernetes)
 * [Run Locally](#run-locally)
@@ -95,7 +95,7 @@ candidates = dimsim.get_candidates("粉丝", mode="traditional", theta=1)
 ```
 
 
-## Deploy from Docker Hub
+## Deploy from Quay
 
 To run the docker image, which automatically starts the model serving API, run:
 
@@ -103,7 +103,7 @@ To run the docker image, which automatically starts the model serving API, run:
 $ docker run -it -p 5000:5000 quay.io/codait/max-chinese-phonetic-similarity-estimator
 ```
 
-This will pull a pre-built image from Docker Hub (or use an existing image if already cached locally) and run it.
+This will pull a pre-built image from the Quay.io container registry (or use an existing image if already cached locally) and run it.
 If you'd rather checkout and build the model locally you can follow the [run locally](#run-locally) steps below.
 
 ## Deploy on Red Hat OpenShift
@@ -112,7 +112,7 @@ You can deploy the model-serving microservice on Red Hat OpenShift by following 
 
 ## Deploy on Kubernetes
 
-You can also deploy the model on Kubernetes using the latest docker image on Docker Hub.
+You can also deploy the model on Kubernetes using the latest docker image on Quay.
 
 On your Kubernetes cluster, run the following commands:
 
